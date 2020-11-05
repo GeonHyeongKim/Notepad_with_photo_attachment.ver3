@@ -149,7 +149,7 @@
             </objects>
             <point key="canvasLocation" x="430.76923076923077" y="250.94786729857819"/>
         </scene>
-        <!--View Controller-->
+        <!--상세화면-->
         <scene sceneID="b5q-Lk-aax">
             <objects>
                 <viewController id="4mY-DR-u3L" sceneMemberID="viewController">
@@ -193,11 +193,11 @@
                             <constraint firstItem="fxi-co-Zed" firstAttribute="leading" secondItem="lNj-cJ-d32" secondAttribute="leading" id="fYj-Da-GaN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tIA-QD-xQv"/>
+                    <navigationItem key="navigationItem" title="상세화면" id="QVX-l9-gbr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRn-65-z24" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1413.8461538461538" y="616.35071090047393"/>
+            <point key="canvasLocation" x="1414" y="615"/>
         </scene>
         <!--메모 작성-->
         <scene sceneID="gBx-WA-KhQ">
