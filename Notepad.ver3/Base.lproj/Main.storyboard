@@ -141,10 +141,29 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="4mY-DR-u3L" kind="show" id="Ka2-CC-Mbt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QoV-JQ-eiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="430.76923076923077" y="250.94786729857819"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="b5q-Lk-aax">
+            <objects>
+                <viewController id="4mY-DR-u3L" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nbp-nU-Mqo">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lNj-cJ-d32"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tIA-QD-xQv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GRn-65-z24" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1415" y="617"/>
         </scene>
         <!--메모 작성-->
         <scene sceneID="gBx-WA-KhQ">
@@ -192,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yeb-Dd-4tB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1736.9230769230769" y="250.94786729857819"/>
+            <point key="canvasLocation" x="1414" y="-58"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0QR-pd-tb4">
