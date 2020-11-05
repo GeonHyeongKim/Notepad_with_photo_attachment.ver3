@@ -39,7 +39,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgE-4h-pQF">
-                                            <rect key="frame" x="29.999999999999986" y="37" width="253.66666666666663" height="24.666666666666671"/>
+                                            <rect key="frame" x="29.999999999999986" y="37" width="253.66666666666663" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="g36-xg-gM2"/>
                                             </constraints>
@@ -60,9 +60,7 @@
                                     <constraints>
                                         <constraint firstItem="ZI6-TU-rab" firstAttribute="leading" secondItem="XXp-8x-zP8" secondAttribute="leadingMargin" constant="10" id="3Ms-Oc-Rs2"/>
                                         <constraint firstAttribute="trailing" secondItem="yYR-vu-xbU" secondAttribute="trailing" id="3dk-7C-cfV"/>
-                                        <constraint firstItem="HgE-4h-pQF" firstAttribute="top" secondItem="ZI6-TU-rab" secondAttribute="bottom" constant="5" id="GDP-qt-hgL"/>
                                         <constraint firstItem="HgE-4h-pQF" firstAttribute="top" secondItem="ZI6-TU-rab" secondAttribute="bottom" constant="5" id="L7U-O9-DGX"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="HgE-4h-pQF" secondAttribute="bottom" constant="7.5" id="Nhm-D2-KGS"/>
                                         <constraint firstAttribute="bottom" secondItem="yYR-vu-xbU" secondAttribute="bottom" constant="10" id="R2Q-p7-dsu"/>
                                         <constraint firstItem="yYR-vu-xbU" firstAttribute="leading" secondItem="HgE-4h-pQF" secondAttribute="trailing" constant="10" id="Se7-2M-Era"/>
                                         <constraint firstItem="HgE-4h-pQF" firstAttribute="leading" secondItem="XXp-8x-zP8" secondAttribute="leadingMargin" constant="10" id="Yzs-Dk-iTr"/>
@@ -79,36 +77,53 @@
                                     <rect key="frame" x="0.0" y="0.0" width="358.66666666666669" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="글의 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYc-CH-REK">
-                                            <rect key="frame" x="76" y="9" width="52" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020-11-04 19:01:30" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkb-hK-fPA" userLabel="날짜">
+                                            <rect key="frame" x="293.66666666666669" y="10" width="65" height="60"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="9EH-je-6JY"/>
+                                                <constraint firstAttribute="width" constant="65" id="H1b-iG-xkL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lvA-6w-RRR">
+                                            <rect key="frame" x="20" y="11" width="48" height="58"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="lvA-6w-RRR" secondAttribute="height" multiplier="24:29" id="eqk-je-5mp"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYc-CH-REK">
+                                            <rect key="frame" x="77.999999999999986" y="11" width="205.66666666666663" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Fky-H0-CZf"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="글의 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyC-64-knK">
-                                            <rect key="frame" x="76" y="38" width="45" height="14.333333333333332"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvA-6w-RRR">
-                                            <rect key="frame" x="20" y="11" width="48" height="58"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2020-11-04 19:01:30" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkb-hK-fPA" userLabel="날짜">
-                                            <rect key="frame" x="283" y="9" width="75" height="39"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyC-64-knK">
+                                            <rect key="frame" x="77.999999999999986" y="37" width="205.66666666666663" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="Fqq-JP-pnB"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="dYc-CH-REK" firstAttribute="leading" secondItem="lvA-6w-RRR" secondAttribute="trailing" constant="10" id="Nlh-OJ-tIT"/>
-                                        <constraint firstItem="zyC-64-knK" firstAttribute="top" secondItem="dYc-CH-REK" secondAttribute="bottom" constant="5" id="Td4-Ks-4Hl"/>
-                                        <constraint firstItem="kkb-hK-fPA" firstAttribute="leading" secondItem="dYc-CH-REK" secondAttribute="trailing" constant="10" id="rTc-S0-QoP"/>
-                                        <constraint firstItem="dYc-CH-REK" firstAttribute="top" secondItem="khm-FB-Ewe" secondAttribute="top" id="yZ9-YZ-PEt"/>
+                                        <constraint firstItem="kkb-hK-fPA" firstAttribute="leading" secondItem="dYc-CH-REK" secondAttribute="trailing" constant="10" id="3QQ-qY-Lrs"/>
+                                        <constraint firstItem="zyC-64-knK" firstAttribute="leading" secondItem="lvA-6w-RRR" secondAttribute="trailing" constant="10" id="4VW-fq-PYY"/>
+                                        <constraint firstItem="dYc-CH-REK" firstAttribute="top" secondItem="khm-FB-Ewe" secondAttribute="topMargin" id="66w-G1-f91"/>
+                                        <constraint firstItem="kkb-hK-fPA" firstAttribute="top" secondItem="khm-FB-Ewe" secondAttribute="top" constant="10" id="A1n-LV-PqS"/>
+                                        <constraint firstItem="lvA-6w-RRR" firstAttribute="bottom" secondItem="khm-FB-Ewe" secondAttribute="bottomMargin" id="Kwr-XN-1Qv"/>
+                                        <constraint firstItem="kkb-hK-fPA" firstAttribute="leading" secondItem="zyC-64-knK" secondAttribute="trailing" constant="10" id="Qb1-8N-eom"/>
+                                        <constraint firstItem="zyC-64-knK" firstAttribute="top" secondItem="dYc-CH-REK" secondAttribute="bottom" constant="5" id="V1j-7r-eAQ"/>
+                                        <constraint firstItem="lvA-6w-RRR" firstAttribute="top" secondItem="khm-FB-Ewe" secondAttribute="topMargin" id="apK-ZI-A1R"/>
+                                        <constraint firstItem="dYc-CH-REK" firstAttribute="leading" secondItem="lvA-6w-RRR" secondAttribute="trailing" constant="10" id="cR8-Bj-rxE"/>
+                                        <constraint firstAttribute="bottom" secondItem="kkb-hK-fPA" secondAttribute="bottom" constant="10" id="not-uU-9KR"/>
+                                        <constraint firstAttribute="trailing" secondItem="kkb-hK-fPA" secondAttribute="trailing" id="tGq-M5-bmd"/>
+                                        <constraint firstItem="lvA-6w-RRR" firstAttribute="leading" secondItem="khm-FB-Ewe" secondAttribute="leadingMargin" id="zfz-xb-sY2"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
