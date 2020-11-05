@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		577794492553930A004AA02A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577794482553930A004AA02A /* AppDelegate.swift */; };
 		5777944B2553930A004AA02A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5777944A2553930A004AA02A /* SceneDelegate.swift */; };
-		5777944D2553930A004AA02A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5777944C2553930A004AA02A /* ViewController.swift */; };
 		577794502553930A004AA02A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5777944E2553930A004AA02A /* Main.storyboard */; };
 		577794532553930A004AA02A /* Notepad_ver3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 577794512553930A004AA02A /* Notepad_ver3.xcdatamodeld */; };
 		577794552553930B004AA02A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577794542553930B004AA02A /* Assets.xcassets */; };
@@ -20,7 +19,6 @@
 		577794452553930A004AA02A /* Notepad.ver3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notepad.ver3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577794482553930A004AA02A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5777944A2553930A004AA02A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5777944C2553930A004AA02A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5777944F2553930A004AA02A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		577794522553930A004AA02A /* Notepad_ver3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notepad_ver3.xcdatamodel; sourceTree = "<group>"; };
 		577794542553930B004AA02A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 			children = (
 				577794482553930A004AA02A /* AppDelegate.swift */,
 				5777944A2553930A004AA02A /* SceneDelegate.swift */,
-				5777944C2553930A004AA02A /* ViewController.swift */,
 				5777944E2553930A004AA02A /* Main.storyboard */,
 				577794542553930B004AA02A /* Assets.xcassets */,
 				577794562553930B004AA02A /* LaunchScreen.storyboard */,
@@ -141,7 +138,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5777944D2553930A004AA02A /* ViewController.swift in Sources */,
 				577794492553930A004AA02A /* AppDelegate.swift in Sources */,
 				5777944B2553930A004AA02A /* SceneDelegate.swift in Sources */,
 				577794532553930A004AA02A /* Notepad_ver3.xcdatamodeld in Sources */,
@@ -220,7 +216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
