@@ -252,7 +252,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imagePickerController" destination="7bH-JC-mYs" id="gd6-WR-ykL"/>
-                        <outlet property="tvMemo" destination="nc5-ta-3k7" id="cuQ-7d-dq2"/>
+                        <outlet property="ivPreView" destination="7bH-JC-mYs" id="3pT-fG-KdJ"/>
+                        <outlet property="tvContents" destination="nc5-ta-3k7" id="cuQ-7d-dq2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yeb-Dd-4tB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

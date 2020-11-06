@@ -10,7 +10,8 @@ import UIKit
 
 class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet var tvMemo: UITextView!
+    @IBOutlet var tvContents: UITextView!
+    @IBOutlet var ivPreView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
