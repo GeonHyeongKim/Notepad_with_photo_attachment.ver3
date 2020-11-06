@@ -31,7 +31,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZI6-TU-rab">
-                                            <rect key="frame" x="29.999999999999986" y="11" width="248.66666666666663" height="21"/>
+                                            <rect key="frame" x="20" y="11" width="258.66666666666669" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="dAl-0h-uq5"/>
                                             </constraints>
@@ -40,7 +40,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgE-4h-pQF">
-                                            <rect key="frame" x="29.999999999999986" y="37" width="248.66666666666663" height="30"/>
+                                            <rect key="frame" x="20" y="37" width="258.66666666666669" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="g36-xg-gM2"/>
                                             </constraints>
@@ -59,14 +59,15 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ZI6-TU-rab" firstAttribute="leading" secondItem="XXp-8x-zP8" secondAttribute="leadingMargin" constant="10" id="3Ms-Oc-Rs2"/>
+                                        <constraint firstItem="ZI6-TU-rab" firstAttribute="leading" secondItem="XXp-8x-zP8" secondAttribute="leadingMargin" id="3Ms-Oc-Rs2"/>
                                         <constraint firstAttribute="trailing" secondItem="yYR-vu-xbU" secondAttribute="trailing" id="3dk-7C-cfV"/>
                                         <constraint firstItem="HgE-4h-pQF" firstAttribute="top" secondItem="ZI6-TU-rab" secondAttribute="bottom" constant="5" id="L7U-O9-DGX"/>
                                         <constraint firstAttribute="bottom" secondItem="yYR-vu-xbU" secondAttribute="bottom" constant="10" id="R2Q-p7-dsu"/>
                                         <constraint firstItem="yYR-vu-xbU" firstAttribute="leading" secondItem="HgE-4h-pQF" secondAttribute="trailing" constant="10" id="Se7-2M-Era"/>
-                                        <constraint firstItem="HgE-4h-pQF" firstAttribute="leading" secondItem="XXp-8x-zP8" secondAttribute="leadingMargin" constant="10" id="Yzs-Dk-iTr"/>
+                                        <constraint firstItem="HgE-4h-pQF" firstAttribute="leading" secondItem="XXp-8x-zP8" secondAttribute="leadingMargin" id="Yzs-Dk-iTr"/>
                                         <constraint firstItem="ZI6-TU-rab" firstAttribute="top" secondItem="XXp-8x-zP8" secondAttribute="topMargin" id="mex-HB-Vf1"/>
                                         <constraint firstItem="yYR-vu-xbU" firstAttribute="leading" secondItem="ZI6-TU-rab" secondAttribute="trailing" constant="10" id="rDm-nC-B6Y"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="HgE-4h-pQF" secondAttribute="bottom" id="uxR-ha-h7r"/>
                                         <constraint firstItem="yYR-vu-xbU" firstAttribute="top" secondItem="XXp-8x-zP8" secondAttribute="top" constant="10" id="yEr-i9-Qji"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -76,7 +77,7 @@
                                     <outlet property="lblSubject" destination="ZI6-TU-rab" id="GaH-Z9-rAj"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Disclosure Indicator" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Disclosure Indicator" rowHeight="80" id="Q8P-v2-CGd" customClass="MemoCell" customModule="Notepad_ver3" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memoCellWithImage" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCellWithImage" rowHeight="80" id="Q8P-v2-CGd" customClass="MemoCell" customModule="Notepad_ver3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="390" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q8P-v2-CGd" id="khm-FB-Ewe">
@@ -108,7 +109,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyC-64-knK">
-                                            <rect key="frame" x="77.999999999999986" y="37" width="200.66666666666663" height="30"/>
+                                            <rect key="frame" x="77.999999999999986" y="37" width="200.66666666666663" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="Fqq-JP-pnB"/>
                                             </constraints>
@@ -127,6 +128,7 @@
                                         <constraint firstItem="zyC-64-knK" firstAttribute="top" secondItem="dYc-CH-REK" secondAttribute="bottom" constant="5" id="V1j-7r-eAQ"/>
                                         <constraint firstItem="lvA-6w-RRR" firstAttribute="top" secondItem="khm-FB-Ewe" secondAttribute="topMargin" id="apK-ZI-A1R"/>
                                         <constraint firstItem="dYc-CH-REK" firstAttribute="leading" secondItem="lvA-6w-RRR" secondAttribute="trailing" constant="10" id="cR8-Bj-rxE"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="zyC-64-knK" secondAttribute="bottom" id="iHz-Fr-yMO"/>
                                         <constraint firstAttribute="bottom" secondItem="kkb-hK-fPA" secondAttribute="bottom" constant="10" id="not-uU-9KR"/>
                                         <constraint firstAttribute="trailing" secondItem="kkb-hK-fPA" secondAttribute="trailing" id="tGq-M5-bmd"/>
                                         <constraint firstItem="lvA-6w-RRR" firstAttribute="leading" secondItem="khm-FB-Ewe" secondAttribute="leadingMargin" id="zfz-xb-sY2"/>
@@ -229,8 +231,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7bH-JC-mYs">
-                                <rect key="frame" x="0.0" y="346" width="250" height="250"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7bH-JC-mYs">
+                                <rect key="frame" x="0.0" y="353" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="5Z9-Hh-nHq"/>
                                     <constraint firstAttribute="width" constant="250" id="KZH-5a-5P2"/>
@@ -262,7 +264,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="ivPreView" destination="7bH-JC-mYs" id="3pT-fG-KdJ"/>
+                        <outlet property="ivPreview" destination="7bH-JC-mYs" id="3pT-fG-KdJ"/>
                         <outlet property="tvContents" destination="nc5-ta-3k7" id="cuQ-7d-dq2"/>
                     </connections>
                 </viewController>
