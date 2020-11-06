@@ -12,7 +12,7 @@
         <!--목록-->
         <scene sceneID="eiQ-mo-8w7">
             <objects>
-                <tableViewController id="PRs-Wg-LC1" sceneMemberID="viewController">
+                <tableViewController id="PRs-Wg-LC1" customClass="MemoListVC" customModule="Notepad_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3DX-Ss-NYL">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" rowHeight="80" id="iVg-xT-rzV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" rowHeight="80" id="iVg-xT-rzV" customClass="MemoCell" customModule="Notepad_ver3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="390" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iVg-xT-rzV" id="XXp-8x-zP8">
@@ -71,7 +71,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Disclosure Indicator" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Disclosure Indicator" rowHeight="80" id="Q8P-v2-CGd">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Disclosure Indicator" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Disclosure Indicator" rowHeight="80" id="Q8P-v2-CGd" customClass="MemoCell" customModule="Notepad_ver3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="390" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q8P-v2-CGd" id="khm-FB-Ewe">
@@ -152,7 +152,7 @@
         <!--상세화면-->
         <scene sceneID="b5q-Lk-aax">
             <objects>
-                <viewController id="4mY-DR-u3L" sceneMemberID="viewController">
+                <viewController id="4mY-DR-u3L" customClass="MemoFomeVC" customModule="Notepad_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nbp-nU-Mqo">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,7 +202,7 @@
         <!--메모 작성-->
         <scene sceneID="gBx-WA-KhQ">
             <objects>
-                <viewController id="34k-hX-5gw" sceneMemberID="viewController">
+                <viewController id="34k-hX-5gw" customClass="MemoReadVC" customModule="Notepad_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8sA-wh-hYN">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
