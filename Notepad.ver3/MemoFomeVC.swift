@@ -12,7 +12,7 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
 
     var subject: String!
     @IBOutlet var tvContents: UITextView!
-    @IBOutlet var ivPreView: UIImageView!
+    @IBOutlet var ivPreview: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         let data = MemoData()
         data.title = self.subject // 제목
         data.contents = self.tvContents.text // 내용
-        data.image = self.ivPreView.image // 이미지
+        data.image = self.ivPreview.image // 이미지
         data.regdate = Date() // 작성 시각
         
         // App Delegate 객체를 읽어온 다음, memoList 배열에 MemoData 객체를 추가
@@ -61,7 +61,7 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         // 선택된 이미지를 미리보기에 표시
         if let editedImage = info[.editedImage] as? UIImage {
-            self.ivPreView.image = editedImage
+            self.ivPreview.image = editedImage
         }
         
         // 이미지 피커 컨트롤러 닫기
