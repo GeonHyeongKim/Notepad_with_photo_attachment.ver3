@@ -21,7 +21,27 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     // 자장 버튼을 클릭했을 때, 호출되는 메소드
     @IBAction func save(_ sender: Any) {
+        // 내용을 입력하지 않았을 경우, 경고창
+        guard self.tvContents.text?.isEmpty == false else {
+            let alert = UIAlertController(title: nil, message: "내용을 입력해주세요", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: false, completion: nil)
+            return
+        }
         
+        // MemoData 객체를 생성하고, 데이터를 담음
+        let data = MemoData()
+        data.title = self.subject // 제목
+        data.contents = self.tvContents.text // 내용
+        data.image = self.ivPreView.image // 이미지
+        data.regdate = Date() // 작성 시각
+        
+        // App Delegate 객체를 읽어온 다음, memoList 배열에 MemoData 객체를 추가
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memoList.append(data)
+        
+        // 작성폼 화면을 종료하고, 이전화면으로 되돌아감
+        navigationController?.popViewController(animated: true)
     }
     
     // 카메라 버튼을 클릭했을 때, 호출되는 메소드
