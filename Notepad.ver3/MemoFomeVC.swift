@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
 
     var subject: String!
     @IBOutlet var tvContents: UITextView!
@@ -16,8 +16,7 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.tvContents.delegate = self
     }
     
     // 자장 버튼을 클릭했을 때, 호출되는 메소드
@@ -48,14 +47,13 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         // 이미지 피커 컨트롤러 닫기
         dismiss(animated: false, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func textViewDidChange(_ textView: UITextView) {
+        // 내용의 최대 15자리까지 읽어 subject 변수에 저장
+        let contents = textView.text as NSString
+        let length = contents.length > 15 ? 15 : contents.length
+        self.subject = contents.substring(with: _NSRange(location: 0, length: length))
+        
+        self.navigationItem.title = subject
     }
-    */
-
 }
