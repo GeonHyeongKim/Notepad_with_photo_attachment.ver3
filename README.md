@@ -1,7 +1,7 @@
 # Notepad_with_photo_attachment.ver3
 피드백을 통한 사진 첨부가 가능한 개선된 메모앱 ver3
 
-* Start : 2020/11/05
+* Start : 2020/11/05 ~ 
 * Language : Swift
 * Description : **Create a Notepad with photo attachment.**  <br/>
 The point is not just a notepad for simple text input, but also multiple photos! <br/>
