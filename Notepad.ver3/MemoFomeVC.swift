@@ -8,15 +8,30 @@
 
 import UIKit
 
-class MemoFomeVC: UIViewController {
+class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet var tvMemo: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    // 자장 버튼을 클릭했을 때, 호출되는 메소드
+    @IBAction func save(_ sender: Any) {
+        
+    }
+    
+    // 카메라 버튼을 클릭했을 때, 호출되는 메소드
+    @IBAction func pick(_ sender: Any) {
+        
+    }
 
+    // 이미지 피커에서 이미지를 선택했을때, 호출되는 메소드
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        <#code#>
+    }
     /*
     // MARK: - Navigation
 
