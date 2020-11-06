@@ -70,6 +70,11 @@
                                         <constraint firstItem="yYR-vu-xbU" firstAttribute="top" secondItem="XXp-8x-zP8" secondAttribute="top" constant="10" id="yEr-i9-Qji"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblContents" destination="HgE-4h-pQF" id="l4O-h7-r1s"/>
+                                    <outlet property="lblRegdate" destination="yYR-vu-xbU" id="Qd4-lR-NBw"/>
+                                    <outlet property="lblSubject" destination="ZI6-TU-rab" id="GaH-Z9-rAj"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Disclosure Indicator" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Disclosure Indicator" rowHeight="80" id="Q8P-v2-CGd" customClass="MemoCell" customModule="Notepad_ver3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="390" height="80"/>
@@ -127,6 +132,12 @@
                                         <constraint firstItem="lvA-6w-RRR" firstAttribute="leading" secondItem="khm-FB-Ewe" secondAttribute="leadingMargin" id="zfz-xb-sY2"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ivThum" destination="lvA-6w-RRR" id="ozo-0K-1VB"/>
+                                    <outlet property="lblContents" destination="zyC-64-knK" id="hd4-PN-POb"/>
+                                    <outlet property="lblRegdate" destination="kkb-hK-fPA" id="6XL-eY-gYl"/>
+                                    <outlet property="lblSubject" destination="dYc-CH-REK" id="nvu-WB-XO4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
