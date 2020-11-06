@@ -218,8 +218,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7bH-JC-mYs">
-                                <rect key="frame" x="0.0" y="353" width="250" height="250"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7bH-JC-mYs">
+                                <rect key="frame" x="0.0" y="346" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="5Z9-Hh-nHq"/>
                                     <constraint firstAttribute="width" constant="250" id="KZH-5a-5P2"/>
@@ -251,7 +251,6 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="imagePickerController" destination="7bH-JC-mYs" id="gd6-WR-ykL"/>
                         <outlet property="ivPreView" destination="7bH-JC-mYs" id="3pT-fG-KdJ"/>
                         <outlet property="tvContents" destination="nc5-ta-3k7" id="cuQ-7d-dq2"/>
                     </connections>
