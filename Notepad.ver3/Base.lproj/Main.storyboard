@@ -152,7 +152,7 @@
         <!--상세화면-->
         <scene sceneID="b5q-Lk-aax">
             <objects>
-                <viewController id="4mY-DR-u3L" customClass="MemoFomeVC" customModule="Notepad_ver3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4mY-DR-u3L" customClass="MemoReadVC" customModule="Notepad_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nbp-nU-Mqo">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,7 +202,7 @@
         <!--메모 작성-->
         <scene sceneID="gBx-WA-KhQ">
             <objects>
-                <viewController id="34k-hX-5gw" customClass="MemoReadVC" customModule="Notepad_ver3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="34k-hX-5gw" customClass="MemoFomeVC" customModule="Notepad_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8sA-wh-hYN">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
