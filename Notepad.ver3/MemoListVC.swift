@@ -14,6 +14,10 @@ class MemoListVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
