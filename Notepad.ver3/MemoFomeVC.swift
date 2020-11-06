@@ -40,6 +40,13 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     // 이미지 피커에서 이미지를 선택했을때, 호출되는 메소드
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        // 선택된 이미지를 미리보기에 표시
+        if let editedImage = info[.editedImage] as? UIImage {
+            self.ivPreView.image = editedImage
+        }
+        
+        // 이미지 피커 컨트롤러 닫기
+        dismiss(animated: false, completion: nil)
     }
     /*
     // MARK: - Navigation
