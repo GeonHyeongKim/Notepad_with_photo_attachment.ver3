@@ -28,6 +28,7 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             self.present(alert, animated: false, completion: nil)
             return
         }
+
         
         // MemoData 객체를 생성하고, 데이터를 담음
         let data = MemoData()
