@@ -10,6 +10,7 @@ import UIKit
 
 class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    var subject: String!
     @IBOutlet var tvContents: UITextView!
     @IBOutlet var ivPreView: UIImageView!
     
