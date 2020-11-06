@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		575AEC85255513A800D97F33 /* fountainpen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AEC84255513A800D97F33 /* fountainpen@2x.png */; };
 		577794492553930A004AA02A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577794482553930A004AA02A /* AppDelegate.swift */; };
 		5777944B2553930A004AA02A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5777944A2553930A004AA02A /* SceneDelegate.swift */; };
 		577794502553930A004AA02A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5777944E2553930A004AA02A /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		575AEC84255513A800D97F33 /* fountainpen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fountainpen@2x.png"; sourceTree = SOURCE_ROOT; };
 		577794452553930A004AA02A /* Notepad.ver3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notepad.ver3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577794482553930A004AA02A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5777944A2553930A004AA02A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		575AEC832555137200D97F33 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				575AEC84255513A800D97F33 /* fountainpen@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		5777943C2553930A004AA02A = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 				577794482553930A004AA02A /* AppDelegate.swift */,
 				5777944A2553930A004AA02A /* SceneDelegate.swift */,
 				57DC461B2554D70300BAF8C6 /* MemoData.swift */,
+				575AEC832555137200D97F33 /* Resources */,
 				57DC461E2554D70B00BAF8C6 /* Data */,
 				57DC46162554D5E100BAF8C6 /* UITableViewCell */,
 				57DC46092554D4DF00BAF8C6 /* MemoListVC.swift */,
@@ -158,6 +169,7 @@
 			files = (
 				577794582553930B004AA02A /* LaunchScreen.storyboard in Resources */,
 				577794552553930B004AA02A /* Assets.xcassets in Resources */,
+				575AEC85255513A800D97F33 /* fountainpen@2x.png in Resources */,
 				577794502553930A004AA02A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
