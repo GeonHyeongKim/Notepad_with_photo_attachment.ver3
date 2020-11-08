@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		575AEC85255513A800D97F33 /* fountainpen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AEC84255513A800D97F33 /* fountainpen@2x.png */; };
+		575AEC90255814C200D97F33 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AEC8F255814C200D97F33 /* UIViewController+Alert.swift */; };
+		575AEC94255814D000D97F33 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AEC93255814D000D97F33 /* UIImage.swift */; };
+		575AEC97255814E200D97F33 /* NSTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AEC96255814E200D97F33 /* NSTextAttachment.swift */; };
+		575AEC9A255814F500D97F33 /* NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AEC99255814F500D97F33 /* NSData.swift */; };
+		575AEC9D2558150400D97F33 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AEC9C2558150400D97F33 /* NSAttributedString.swift */; };
 		577794492553930A004AA02A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577794482553930A004AA02A /* AppDelegate.swift */; };
 		5777944B2553930A004AA02A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5777944A2553930A004AA02A /* SceneDelegate.swift */; };
 		577794502553930A004AA02A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5777944E2553930A004AA02A /* Main.storyboard */; };
@@ -23,6 +28,11 @@
 
 /* Begin PBXFileReference section */
 		575AEC84255513A800D97F33 /* fountainpen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fountainpen@2x.png"; sourceTree = SOURCE_ROOT; };
+		575AEC8F255814C200D97F33 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		575AEC93255814D000D97F33 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		575AEC96255814E200D97F33 /* NSTextAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextAttachment.swift; sourceTree = "<group>"; };
+		575AEC99255814F500D97F33 /* NSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSData.swift; sourceTree = "<group>"; };
+		575AEC9C2558150400D97F33 /* NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		577794452553930A004AA02A /* Notepad.ver3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notepad.ver3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577794482553930A004AA02A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5777944A2553930A004AA02A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +67,18 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		575AEC8E2558149900D97F33 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				575AEC8F255814C200D97F33 /* UIViewController+Alert.swift */,
+				575AEC93255814D000D97F33 /* UIImage.swift */,
+				575AEC96255814E200D97F33 /* NSTextAttachment.swift */,
+				575AEC99255814F500D97F33 /* NSData.swift */,
+				575AEC9C2558150400D97F33 /* NSAttributedString.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		5777943C2553930A004AA02A = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +104,7 @@
 				575AEC832555137200D97F33 /* Resources */,
 				57DC461E2554D70B00BAF8C6 /* Data */,
 				57DC46162554D5E100BAF8C6 /* UITableViewCell */,
+				575AEC8E2558149900D97F33 /* Extension */,
 				57DC46092554D4DF00BAF8C6 /* MemoListVC.swift */,
 				57DC460C2554D53100BAF8C6 /* MemoFomeVC.swift */,
 				57DC46122554D5A700BAF8C6 /* MemoReadVC.swift */,
@@ -181,6 +204,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				575AEC90255814C200D97F33 /* UIViewController+Alert.swift in Sources */,
+				575AEC94255814D000D97F33 /* UIImage.swift in Sources */,
 				57DC46182554D60100BAF8C6 /* MemoCell.swift in Sources */,
 				57DC461C2554D70300BAF8C6 /* MemoData.swift in Sources */,
 				577794492553930A004AA02A /* AppDelegate.swift in Sources */,
@@ -188,6 +213,9 @@
 				57DC46132554D5A700BAF8C6 /* MemoReadVC.swift in Sources */,
 				57DC460A2554D4DF00BAF8C6 /* MemoListVC.swift in Sources */,
 				57DC460D2554D53100BAF8C6 /* MemoFomeVC.swift in Sources */,
+				575AEC97255814E200D97F33 /* NSTextAttachment.swift in Sources */,
+				575AEC9A255814F500D97F33 /* NSData.swift in Sources */,
+				575AEC9D2558150400D97F33 /* NSAttributedString.swift in Sources */,
 				577794532553930A004AA02A /* Notepad_ver3.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
