@@ -10,6 +10,14 @@ import UIKit
 
 class MemoListVC: UITableViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let formatter: DateFormatter = {
+        let format = DateFormatter()
+        format.dateStyle = .long
+        format.timeStyle = .short
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        format.locale = Locale(identifier: "Ko_kr") // 한글표시
+        return format
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +51,7 @@ class MemoListVC: UITableViewController {
         cell.ivThum?.image = row.image
         
         // Date 타입의 날짜를 yyyy-MM-dd HH:mm:ss 포멧으로 변경
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        cell.lblRegdate?.text = formatter.string(from: row.regdate!)
+        cell.lblRegdate?.text = formatter.string(for: row.regdate!)
 
         return cell
     }

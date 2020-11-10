@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		575AEC85255513A800D97F33 /* fountainpen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AEC84255513A800D97F33 /* fountainpen@2x.png */; };
 		575AEC90255814C200D97F33 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AEC8F255814C200D97F33 /* UIViewController+Alert.swift */; };
 		575AEC94255814D000D97F33 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AEC93255814D000D97F33 /* UIImage.swift */; };
 		575AEC97255814E200D97F33 /* NSTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AEC96255814E200D97F33 /* NSTextAttachment.swift */; };
 		575AEC9A255814F500D97F33 /* NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AEC99255814F500D97F33 /* NSData.swift */; };
 		575AEC9D2558150400D97F33 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AEC9C2558150400D97F33 /* NSAttributedString.swift */; };
+		576FCBBF255A814B00AD17DC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576FCBBE255A814B00AD17DC /* DataManager.swift */; };
+		576FCBC3255A837B00AD17DC /* fountainpen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 576FCBC2255A837B00AD17DC /* fountainpen@2x.png */; };
 		577794492553930A004AA02A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577794482553930A004AA02A /* AppDelegate.swift */; };
 		5777944B2553930A004AA02A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5777944A2553930A004AA02A /* SceneDelegate.swift */; };
 		577794502553930A004AA02A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5777944E2553930A004AA02A /* Main.storyboard */; };
@@ -27,12 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		575AEC84255513A800D97F33 /* fountainpen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fountainpen@2x.png"; sourceTree = SOURCE_ROOT; };
 		575AEC8F255814C200D97F33 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		575AEC93255814D000D97F33 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		575AEC96255814E200D97F33 /* NSTextAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextAttachment.swift; sourceTree = "<group>"; };
 		575AEC99255814F500D97F33 /* NSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSData.swift; sourceTree = "<group>"; };
 		575AEC9C2558150400D97F33 /* NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
+		576FCBBE255A814B00AD17DC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		576FCBC2255A837B00AD17DC /* fountainpen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fountainpen@2x.png"; sourceTree = "<group>"; };
 		577794452553930A004AA02A /* Notepad.ver3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notepad.ver3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577794482553930A004AA02A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5777944A2553930A004AA02A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +64,7 @@
 		575AEC832555137200D97F33 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				575AEC84255513A800D97F33 /* fountainpen@2x.png */,
+				576FCBC2255A837B00AD17DC /* fountainpen@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -128,6 +130,7 @@
 		57DC461E2554D70B00BAF8C6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				576FCBBE255A814B00AD17DC /* DataManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -192,7 +195,7 @@
 			files = (
 				577794582553930B004AA02A /* LaunchScreen.storyboard in Resources */,
 				577794552553930B004AA02A /* Assets.xcassets in Resources */,
-				575AEC85255513A800D97F33 /* fountainpen@2x.png in Resources */,
+				576FCBC3255A837B00AD17DC /* fountainpen@2x.png in Resources */,
 				577794502553930A004AA02A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +210,7 @@
 				575AEC90255814C200D97F33 /* UIViewController+Alert.swift in Sources */,
 				575AEC94255814D000D97F33 /* UIImage.swift in Sources */,
 				57DC46182554D60100BAF8C6 /* MemoCell.swift in Sources */,
+				576FCBBF255A814B00AD17DC /* DataManager.swift in Sources */,
 				57DC461C2554D70300BAF8C6 /* MemoData.swift in Sources */,
 				577794492553930A004AA02A /* AppDelegate.swift in Sources */,
 				5777944B2553930A004AA02A /* SceneDelegate.swift in Sources */,
