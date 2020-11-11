@@ -15,9 +15,21 @@ class MemoReadVC: UIViewController {
     @IBOutlet var lblContents: UILabel!
     @IBOutlet var ivImg: UIImageView!
     
+    var token: NSObjectProtocol?
+    
+    deinit {
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        token = NotificationCenter.default.addObserver(forName: MemoFomeVC.memoDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+//            self?.
+//        })
+        
         self.lblSubject.text = param?.title
         self.lblContents.text = param?.contents
         self.ivImg.image = param?.image

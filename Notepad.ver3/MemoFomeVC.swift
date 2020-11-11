@@ -78,3 +78,9 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         self.navigationItem.title = subject
     }
 }
+
+//MARK: - 새 메모가 발생시 List update
+extension MemoFomeVC {
+    static let newMemoDidInsert = Notification.Name(rawValue: "newMomoDidInsert")
+    static let memoDidChange = Notification.Name(rawValue: "memoDidChange")
+}

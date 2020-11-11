@@ -19,8 +19,21 @@ class MemoListVC: UITableViewController {
         return format
     }()
     
+    var token: NSObjectProtocol? // 메모리 낭비를 줄임
+    
+    deinit { // 소멸자에서 해제
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Observers
+        token = NotificationCenter.default.addObserver(forName: MemoFomeVC.newMemoDidInsert, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+            self?.tableView.reloadData()
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
