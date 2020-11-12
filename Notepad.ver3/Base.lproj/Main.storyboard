@@ -192,6 +192,13 @@
                                     <constraint firstAttribute="width" constant="250" id="a1S-85-oRZ"/>
                                 </constraints>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQO-dM-p6T">
+                                <rect key="frame" x="0.0" y="766" width="390" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" id="e8Q-xm-JaA"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lNj-cJ-d32"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
