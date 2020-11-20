@@ -209,7 +209,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Vtf-hs-3HR"/>
-                                    <barButtonItem title="Item" id="nv0-za-tSL"/>
+                                    <barButtonItem title="Item" systemItem="action" id="nv0-za-tSL">
+                                        <connections>
+                                            <action selector="share:" destination="4mY-DR-u3L" id="CBT-lj-3mW"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

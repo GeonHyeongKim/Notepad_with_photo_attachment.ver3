@@ -63,4 +63,16 @@ class MemoReadVC: UIViewController {
         alert.addAction(cancleAction)
         present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func share(_ sender: UIBarButtonItem) {
+        guard let memo = param?.contents else { return }
+        
+        let vc = UIActivityViewController(activityItems: [memo], applicationActivities: nil)
+        
+        if let pc = popoverPresentationController {
+            pc.barButtonItem = sender
+        }
+        
+        present(vc, animated: true, completion: nil)
+    }
 }
