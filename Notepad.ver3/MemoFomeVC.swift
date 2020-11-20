@@ -23,12 +23,9 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBAction func save(_ sender: Any) {
         // 내용을 입력하지 않았을 경우, 경고창
         guard self.tvContents.text?.isEmpty == false else {
-            let alert = UIAlertController(title: nil, message: "내용을 입력해주세요", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: false, completion: nil)
+            alert(message: "메모를 입력해주세요")
             return
         }
-
         
         // MemoData 객체를 생성하고, 데이터를 담음
         let data = MemoData()
