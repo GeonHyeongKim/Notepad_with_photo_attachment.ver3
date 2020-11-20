@@ -197,6 +197,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Item" id="e8Q-xm-JaA"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gxJ-Dj-bye"/>
+                                    <barButtonItem systemItem="compose" id="wB9-Ot-jxn">
+                                        <connections>
+                                            <segue destination="eS8-CD-I3k" kind="presentation" id="zdg-kq-N4D"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Vtf-hs-3HR"/>
+                                    <barButtonItem title="Item" id="nv0-za-tSL"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -262,6 +270,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="메모 작성" id="c5e-zs-Ua9">
+                        <barButtonItem key="leftBarButtonItem" title="Cancle" id="Uo5-9P-0e7">
+                            <connections>
+                                <action selector="close:" destination="34k-hX-5gw" id="e9V-47-chB"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="camera" id="gLi-nr-Xbx">
                                 <connections>
@@ -428,6 +441,9 @@
             <point key="canvasLocation" x="431" y="1336"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zdg-kq-N4D"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>

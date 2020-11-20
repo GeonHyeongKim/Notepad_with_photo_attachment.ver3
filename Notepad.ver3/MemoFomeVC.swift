@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
-
+class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     var subject: String!
-    var editTarget: Memo?
+    var editTarget: MemoData?
     var originalMemoContent: String?
-
+    
     @IBOutlet var tvContents: UITextView!
     @IBOutlet var ivPreview: UIImageView!
     
@@ -22,14 +22,28 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         if let memo = editTarget { // 편집
             navigationItem.title = "메모 편집"
-            tvContents.text = memo.content
-            originalMemoContent = memo.content
+            tvContents.text = memo.contents
+            originalMemoContent = memo.contents
         } else { // 새 메모
             navigationItem.title = "새 메모"
             tvContents.text = ""
         }
         
         self.tvContents.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tvContents.becomeFirstResponder()
+        navigationController?.presentationController?.delegate = self
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        tvContents.resignFirstResponder()
+        navigationController?.presentationController?.delegate = nil
+    }
+    
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     // 자장 버튼을 클릭했을 때, 호출되는 메소드
@@ -42,7 +56,9 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         // 메모가 입력되었을 경우
         if let memo = editTarget { // 편집
-            
+            memo.contents = self.tvContents.text // 내용
+            memo.regdate = Date()
+            NotificationCenter.default.post(name: MemoFomeVC.memoDidChange, object: nil)
         } else { // 새 메모
             // MemoData 객체를 생성하고, 데이터를 담음
             let data = MemoData()
@@ -73,7 +89,7 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         // 이미지 피커 화면을 표시
         self.present(picker, animated: false, completion: nil)
     }
-
+    
     // 이미지 피커에서 이미지를 선택했을때, 호출되는 메소드
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -86,13 +102,45 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         dismiss(animated: false, completion: nil)
     }
     
+}
+
+//MARK: - UITextViewDelegate
+extension MemoFomeVC: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
+        if let origin = originalMemoContent, let edited = textView.text {
+            if #available(iOS 13.0, *) {
+                isModalInPresentation = origin != edited
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        
         // 내용의 최대 15자리까지 읽어 subject 변수에 저장
         let contents = textView.text as NSString
         let length = contents.length > 15 ? 15 : contents.length
         self.subject = contents.substring(with: _NSRange(location: 0, length: length))
         
         self.navigationItem.title = subject
+    }
+}
+//MARK: - UIAdaptivePresentationControllerDelegate
+extension MemoFomeVC: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
+        let alert = UIAlertController(title: "알림", message: "편집한 내용을 저장할까요?", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "확인", style: .default) { [weak self] (action) in
+            self?.save(action)
+        }
+        
+        alert.addAction(okAction)
+        
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel) { [weak self] (action) in
+            self?.close(action)
+        }
+        
+        alert.addAction(cancleAction)
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 

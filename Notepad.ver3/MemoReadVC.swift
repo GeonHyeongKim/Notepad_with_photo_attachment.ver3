@@ -40,5 +40,11 @@ class MemoReadVC: UIViewController {
         
         self.navigationItem.title = dateString
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination.children.first as? MemoFomeVC {
+            vc.editTarget = param
+        }
+    }
 
 }
