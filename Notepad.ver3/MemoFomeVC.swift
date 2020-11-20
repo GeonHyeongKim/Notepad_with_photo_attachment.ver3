@@ -11,11 +11,24 @@ import UIKit
 class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
 
     var subject: String!
+    var editTarget: Memo?
+    var originalMemoContent: String?
+
     @IBOutlet var tvContents: UITextView!
     @IBOutlet var ivPreview: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let memo = editTarget { // 편집
+            navigationItem.title = "메모 편집"
+            tvContents.text = memo.content
+            originalMemoContent = memo.content
+        } else { // 새 메모
+            navigationItem.title = "새 메모"
+            tvContents.text = ""
+        }
+        
         self.tvContents.delegate = self
     }
     
@@ -27,19 +40,26 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             return
         }
         
-        // MemoData 객체를 생성하고, 데이터를 담음
-        let data = MemoData()
-        data.title = self.subject // 제목
-        data.contents = self.tvContents.text // 내용
-        data.image = self.ivPreview.image // 이미지
-        data.regdate = Date() // 작성 시각
-        
-        // App Delegate 객체를 읽어온 다음, memoList 배열에 MemoData 객체를 추가
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.memoList.append(data)
+        // 메모가 입력되었을 경우
+        if let memo = editTarget { // 편집
+            
+        } else { // 새 메모
+            // MemoData 객체를 생성하고, 데이터를 담음
+            let data = MemoData()
+            data.title = self.subject // 제목
+            data.contents = self.tvContents.text // 내용
+            data.image = self.ivPreview.image // 이미지
+            data.regdate = Date() // 작성 시각
+            
+            // App Delegate 객체를 읽어온 다음, memoList 배열에 MemoData 객체를 추가
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.memoList.append(data)
+            
+            NotificationCenter.default.post(name: MemoFomeVC.newMemoDidInsert, object: nil)
+        }
         
         // 작성폼 화면을 종료하고, 이전화면으로 되돌아감
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     // 카메라 버튼을 클릭했을 때, 호출되는 메소드
