@@ -83,4 +83,27 @@ class MemoListVC: UITableViewController {
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+
+    // 스와이프로 memo 객체 지우기
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let target = appDelegate.memoList[indexPath.row] // 삭제 할 메모
+            appDelegate.memoList.remove(at: indexPath.row)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+
+        }
+    }
 }
