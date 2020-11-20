@@ -3,4 +3,54 @@
    uuid = "CAC80C4C-A877-4DDA-9475-22FDDFEF55B5"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0918C44E-3F7F-40F2-BDD8-160ECCD7C8F5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Notepad.ver3/MemoReadVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0918C44E-3F7F-40F2-BDD8-160ECCD7C8F5 - ea0b3dcafad67750"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Notepad_ver3.MemoReadVC.viewDidLoad() -&gt; ()"
+                  moduleName = "Notepad.ver3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gunhyeong/Desktop/Project/Notepad.ver3/Notepad.ver3/MemoReadVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "207">
+               </Location>
+               <Location
+                  uuid = "0918C44E-3F7F-40F2-BDD8-160ECCD7C8F5 - 48929d43409c23c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Notification) -&gt; () in Notepad_ver3.MemoReadVC.viewDidLoad() -&gt; ()"
+                  moduleName = "Notepad.ver3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gunhyeong/Desktop/Project/Notepad.ver3/Notepad.ver3/MemoReadVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -11,6 +11,7 @@ import UIKit
 class MemoReadVC: UIViewController {
 
     var param: MemoData?
+    var paramIndex: Int?
     @IBOutlet var lblSubject: UILabel!
     @IBOutlet var lblContents: UILabel!
     @IBOutlet var ivImg: UIImageView!
@@ -26,9 +27,9 @@ class MemoReadVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        token = NotificationCenter.default.addObserver(forName: MemoFomeVC.memoDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
-//            self?.
-//        })
+        token = NotificationCenter.default.addObserver(forName: MemoFomeVC.memoDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+            
+        })
         
         self.lblSubject.text = param?.title
         self.lblContents.text = param?.contents
@@ -47,4 +48,19 @@ class MemoReadVC: UIViewController {
         }
     }
 
+    @IBAction func deleteMemo(_ sender: Any) {
+        let alert = UIAlertController(title: "알림", message: "삭제 확인", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] (action) in
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.memoList.remove(at: self!.paramIndex!)
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+        alert.addAction(okAction)
+        
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addAction(cancleAction)
+        present(alert, animated: true, completion: nil)
+    }
 }

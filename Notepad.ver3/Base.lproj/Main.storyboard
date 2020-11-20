@@ -196,7 +196,12 @@
                                 <rect key="frame" x="0.0" y="766" width="390" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Item" id="e8Q-xm-JaA"/>
+                                    <barButtonItem title="Item" systemItem="trash" id="e8Q-xm-JaA">
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <connections>
+                                            <action selector="deleteMemo:" destination="4mY-DR-u3L" id="Pga-gO-v0g"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gxJ-Dj-bye"/>
                                     <barButtonItem systemItem="compose" id="wB9-Ot-jxn">
                                         <connections>
@@ -455,6 +460,9 @@
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

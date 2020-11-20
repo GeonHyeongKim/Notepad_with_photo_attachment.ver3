@@ -79,6 +79,8 @@ class MemoListVC: UITableViewController {
         }
         
         vc.param = row
+        vc.paramIndex = indexPath.row
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
