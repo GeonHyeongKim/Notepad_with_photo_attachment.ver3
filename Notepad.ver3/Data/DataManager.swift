@@ -30,6 +30,15 @@ class DataManager {
         }
     }
     
+    
+    
+    func deleteMemo(_ memo: Memo?) {
+        if let memo = memo {
+            mainContext.delete(memo)
+            saveContext()
+        }
+    }
+    
     // Context : Core Data를 관리
     var mainContext: NSManagedObjectContext {
         return persistentContainer.viewContext
