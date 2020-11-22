@@ -30,7 +30,19 @@ class DataManager {
         }
     }
     
-    
+    // 새로운 메모 생성
+    func addNewMemo(_ title: String?, _ content: String?) {
+        let newMemo = Memo(context: mainContext)
+        newMemo.title = title
+        newMemo.content = content
+        newMemo.insertDate = Date()
+//        newMemo.insertImages = images.
+        
+        // table reload
+        memoList.insert(newMemo, at: 0) // 가장 처음에 입력
+        
+        saveContext()
+    }
     
     func deleteMemo(_ memo: Memo?) {
         if let memo = memo {
