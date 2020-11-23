@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -77,16 +78,95 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         dismiss(animated: true, completion: nil)
     }
     
-    // 카메라 버튼을 클릭했을 때, 호출되는 메소드
-    @IBAction func pick(_ sender: Any) {
-        // 이미지 피커 인스턴스를 생성
-        let picker = UIImagePickerController()
+    // MARK: - Camera
+    @IBAction func insertImage() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        picker.delegate = self
-        picker.allowsEditing = true
+        // 옵션 초기화
+        let libraryAction = UIAlertAction(title: "앨범", style: .default) { [weak self] (alert) in
+            self!.checkPhotoLibraryAuthorizationStatus()
+        }
         
-        // 이미지 피커 화면을 표시
-        self.present(picker, animated: false, completion: nil)
+        let cameraAction = UIAlertAction(title: "새로운 촬영", style: .default, handler: {
+            [weak self] (alert: UIAlertAction!) -> Void in
+            self!.checkCameraAuthorizationStatus()
+        })
+        //        let linkAction = UIAlertAction(title: "외부 링크 이미지", style: .default, handler: {
+        //            [weak self] (alert: UIAlertAction!) -> Void in
+        //            self.presentAlert(title: "URL 입력", message: "")
+        //        })
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(libraryAction)
+        alert.addAction(cameraAction)
+        //        alert.addAction(linkAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+        
+    // photo library 권한 확인
+    private func checkPhotoLibraryAuthorizationStatus(){
+        PHPhotoLibrary.requestAuthorization { (status) in
+            switch status {
+            case .authorized:
+                DispatchQueue.main.async { () -> Void in self.openLibraryAndCamera(.photoLibrary) }
+            case .denied, .restricted:
+                self.settingAlert(title: "사진 보관함에 접근 불가", message: "사진 보관함에 접근할 수 있도록, 앱 개인 정보 설정으로 이동하여 접근 허용해 주세요.")
+            case .notDetermined:
+                PHPhotoLibrary.requestAuthorization() { status in
+                    guard status == .authorized else { return }
+                    self.openLibraryAndCamera(.photoLibrary)
+                }
+            case .limited:
+                print("Photo Library Authorization Status에서 Limited")
+            @unknown default:
+                print("Photo Library Authorization Status에서 에러발생")
+            }
+        }
+    }
+    
+    // camera 권한 확인
+    private func checkCameraAuthorizationStatus(){
+        let authorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
+        
+        switch authorizationStatus {
+        case .authorized:
+            DispatchQueue.main.async { () -> Void in self.openLibraryAndCamera(.camera) }
+        case .denied, .restricted:
+            self.settingAlert(title: "카메라에 접근 불가", message: "카메라에 접근할 수 있도록, 앱 개인 정보 설정으로 이동하여 접근 허용해 주세요.")
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { [weak self] (granted) in
+                if granted { DispatchQueue.main.async { self!.openLibraryAndCamera(.camera) } }
+            }
+        @unknown default:
+            print("Camera Authorization Status에서 에러발생")
+        }
+    }
+    
+    // 엘범 열기 & 새로운 촬영
+    func openLibraryAndCamera(_ sender: UIImagePickerController.SourceType){
+        let imgaePicker = UIImagePickerController()
+        imgaePicker.sourceType = sender
+        imgaePicker.allowsEditing = true
+        imgaePicker.delegate = self
+        present(imgaePicker, animated: true)
+    }
+    
+    // 권한 설정 알림 - photo library, camera
+    private func settingAlert(title: String, message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let settingAction = UIAlertAction(title: "승인", style: .default){ (action) in // 다시 설정에서 허용할 수 있도록
+                if let settingsUrl = NSURL(string:UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(settingsUrl as URL, options: [:], completionHandler: nil)
+                }
+            }
+            let cancleAction = UIAlertAction(title: "허용 안함", style: .destructive, handler: nil)
+            alert.addAction(cancleAction)
+            alert.addAction(settingAction)
+            self.present(alert, animated:true, completion:nil)
+        }
     }
     
     // 이미지 피커에서 이미지를 선택했을때, 호출되는 메소드

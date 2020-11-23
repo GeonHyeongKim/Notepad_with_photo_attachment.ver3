@@ -327,7 +327,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="camera" id="gLi-nr-Xbx">
                                 <connections>
-                                    <action selector="pick:" destination="34k-hX-5gw" id="sfI-Di-Mp0"/>
+                                    <action selector="insertImage" destination="34k-hX-5gw" id="hoq-Os-T1U"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="저장" id="RS4-Bm-LHX">
