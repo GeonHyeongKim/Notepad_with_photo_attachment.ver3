@@ -12,9 +12,7 @@ class MemoReadVC: UIViewController {
 
     var param: MemoData?
     var paramIndex: Int?
-    @IBOutlet var lblSubject: UILabel!
-    @IBOutlet var lblContents: UILabel!
-    @IBOutlet var ivImg: UIImageView!
+    @IBOutlet var tvMemo: UITableView!
     
     var token: NSObjectProtocol?
     
@@ -28,13 +26,9 @@ class MemoReadVC: UIViewController {
         super.viewDidLoad()
 
         token = NotificationCenter.default.addObserver(forName: MemoFomeVC.memoDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
-            
+            self?.tvMemo.reloadData()
         })
-        
-        self.lblSubject.text = param?.title
-        self.lblContents.text = param?.contents
-        self.ivImg.image = param?.image
-        
+                
         let formatter = DateFormatter()
         formatter.dateFormat = "dd일 HH:mm분에 작성됨"
         let dateString = formatter.string(from: (param?.regdate)!)
@@ -74,5 +68,33 @@ class MemoReadVC: UIViewController {
         }
         
         present(vc, animated: true, completion: nil)
+    }
+}
+
+//MARK: - TableVeiw DataSource
+extension MemoReadVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "readTtitleTableViewCell", for: indexPath)
+            cell.textLabel?.text = param?.title
+            
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "readContentsTableViewCell", for: indexPath)
+            cell.textLabel?.text = param?.contents
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "readImgTableViewCell", for: indexPath)
+            cell.imageView?.image = param?.image
+            
+            return cell
+        default:
+            fatalError()
+        }
     }
 }
