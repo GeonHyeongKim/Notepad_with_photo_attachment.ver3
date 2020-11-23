@@ -10,8 +10,6 @@ import UIKit
 
 class MemoReadVC: UIViewController {
 
-//    var param: MemoData?
-//    var paramIndex: Int?
     var memo: Memo?
     @IBOutlet var tvMemo: UITableView!
     
