@@ -10,8 +10,9 @@ import UIKit
 
 class MemoReadVC: UIViewController {
 
-    var param: MemoData?
-    var paramIndex: Int?
+//    var param: MemoData?
+//    var paramIndex: Int?
+    var memo: Memo?
     @IBOutlet var tvMemo: UITableView!
     
     var token: NSObjectProtocol?
@@ -33,14 +34,14 @@ class MemoReadVC: UIViewController {
                 
         let formatter = DateFormatter()
         formatter.dateFormat = "dd일 HH:mm분에 작성됨"
-        let dateString = formatter.string(from: (param?.regdate)!)
+        let dateString = formatter.string(from: (memo?.insertDate)!)
         
         self.navigationItem.title = dateString
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination.children.first as? MemoFomeVC {
-            vc.editTarget = param
+            vc.editTarget = memo
         }
     }
 
@@ -48,8 +49,7 @@ class MemoReadVC: UIViewController {
         let alert = UIAlertController(title: "알림", message: "삭제 확인", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] (action) in
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.memoList.remove(at: self!.paramIndex!)
+            DataManager.shared.deleteMemo(self?.memo)
             self?.navigationController?.popViewController(animated: true)
         }
         
@@ -61,7 +61,7 @@ class MemoReadVC: UIViewController {
     }
     
     @IBAction func share(_ sender: UIBarButtonItem) {
-        guard let memo = param?.contents else { return }
+        guard let memo = memo?.content else { return }
         
         let vc = UIActivityViewController(activityItems: [memo], applicationActivities: nil)
         
@@ -83,16 +83,19 @@ extension MemoReadVC: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "readTtitleTableViewCell", for: indexPath)
-            cell.textLabel?.text = param?.title
+            cell.textLabel?.text = memo?.title
             
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "readContentsTableViewCell", for: indexPath)
-            cell.textLabel?.text = param?.contents
+            cell.textLabel?.text = memo?.content
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "readImgTableViewCell", for: indexPath)
-            cell.imageView?.image = param?.image
+            guard let data = memo?.insertImg else {
+                return cell
+            }
+            cell.imageView?.image = UIImage(data: data)
             return cell
         default:
             fatalError()

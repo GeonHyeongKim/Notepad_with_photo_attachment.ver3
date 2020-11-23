@@ -31,7 +31,7 @@ class DataManager {
     }
     
     // 새로운 메모 생성
-    func addNewMemo(_ title: String?, _ content: String?, _ img: Data) {
+    func addNewMemo(_ title: String?, _ content: String?, _ img: Data?) {
         let newMemo = Memo(context: mainContext)
         newMemo.title = title
         newMemo.content = content

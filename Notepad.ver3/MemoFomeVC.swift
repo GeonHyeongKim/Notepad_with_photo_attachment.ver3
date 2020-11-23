@@ -11,7 +11,7 @@ import UIKit
 class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var subject: String!
-    var editTarget: MemoData?
+    var editTarget: Memo?
     var originalMemoContent: String?
     
     @IBOutlet var tvContents: UITextView!
@@ -22,8 +22,8 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         if let memo = editTarget { // 편집
             navigationItem.title = "메모 편집"
-            tvContents.text = memo.contents
-            originalMemoContent = memo.contents
+            tvContents.text = memo.content
+            originalMemoContent = memo.content
         } else { // 새 메모
             navigationItem.title = "새 메모"
             tvContents.text = ""
@@ -56,21 +56,14 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         // 메모가 입력되었을 경우
         if let memo = editTarget { // 편집
-            memo.contents = self.tvContents.text // 내용
-            memo.regdate = Date()
+            memo.content = self.tvContents.text // 내용
+            memo.insertDate = Date()
+            DataManager.shared.saveContext()
+
             NotificationCenter.default.post(name: MemoFomeVC.memoDidChange, object: nil)
         } else { // 새 메모
             // MemoData 객체를 생성하고, 데이터를 담음
-            let data = MemoData()
-            data.title = self.subject // 제목
-            data.contents = self.tvContents.text // 내용
-            data.image = self.ivPreview.image // 이미지
-            data.regdate = Date() // 작성 시각
-            
-            // App Delegate 객체를 읽어온 다음, memoList 배열에 MemoData 객체를 추가
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.memoList.append(data)
-            
+            DataManager.shared.addNewMemo(subject, tvContents.text, ivPreview.image?.pngData())            
             NotificationCenter.default.post(name: MemoFomeVC.newMemoDidInsert, object: nil)
         }
         

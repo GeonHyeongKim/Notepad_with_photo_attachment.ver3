@@ -9,7 +9,6 @@
 import UIKit
 
 class MemoListVC: UITableViewController {
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let formatter: DateFormatter = {
         let format = DateFormatter()
         format.dateStyle = .long
@@ -37,49 +36,51 @@ class MemoListVC: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tableView.reloadData()
+        DataManager.shared.fetchMemo()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = self.appDelegate.memoList.count
-        return count
+        return DataManager.shared.memoList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // memolist 배열 데이터에서 주어진 행에 맞는 데이터를 꺼냄
-        let row = self.appDelegate.memoList[indexPath.row]
+        let row = DataManager.shared.memoList[indexPath.row]
         
         // 이미지 속성이 비어 있을 경우 "memoCell", 아니면 "memoCellWithImage"
-        let cellId = row.image == nil ? "memoCell" : "memoCellWithImage"
+        let cellId = row.insertImg == nil ? "memoCell" : "memoCellWithImage"
         
         // 재사용 큐로부터 프로토타입 셀의 인스턴스를 전달받음
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! MemoCell
         
         // memoCell의 내용을 구성
         cell.lblSubject?.text = row.title
-        cell.lblContents?.text = row.contents
-        cell.ivThum?.image = row.image
+        cell.lblContents?.text = row.content
+        
+        if let data = row.insertImg {
+            cell.ivThum?.image = UIImage(data: data)
+        }
         
         // Date 타입의 날짜를 yyyy-MM-dd HH:mm:ss 포멧으로 변경
-        cell.lblRegdate?.text = formatter.string(for: row.regdate!)
+        cell.lblRegdate?.text = formatter.string(for: row.insertDate!)
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 배열에서 선택된 행에 맞는 데이터를 꺼내옴
-        let row = self.appDelegate.memoList[indexPath.row]
+        let row = DataManager.shared.memoList[indexPath.row]
         
         // 상세 화면의 인스턴스를 생성
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemoRead") as? MemoReadVC else {
             return
         }
         
-        vc.param = row
-        vc.paramIndex = indexPath.row
+        vc.memo = row
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -98,8 +99,9 @@ class MemoListVC: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let target = appDelegate.memoList[indexPath.row] // 삭제 할 메모
-            appDelegate.memoList.remove(at: indexPath.row)
+            let target = DataManager.shared.memoList[indexPath.row] // 삭제 할 메모
+            DataManager.shared.deleteMemo(target)
+            DataManager.shared.memoList.remove(at: indexPath.row)
             
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
