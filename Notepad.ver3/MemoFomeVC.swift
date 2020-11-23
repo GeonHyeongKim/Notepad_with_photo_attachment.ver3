@@ -24,6 +24,10 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             navigationItem.title = "메모 편집"
             tvContents.text = memo.content
             originalMemoContent = memo.content
+            
+            if let data = memo.insertImg {
+                ivPreview.image = UIImage(data: data)
+            }
         } else { // 새 메모
             navigationItem.title = "새 메모"
             tvContents.text = ""
@@ -56,14 +60,16 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         // 메모가 입력되었을 경우
         if let memo = editTarget { // 편집
+            memo.title = subject
             memo.content = self.tvContents.text // 내용
             memo.insertDate = Date()
+            memo.insertImg = ivPreview.image?.pngData()
             DataManager.shared.saveContext()
 
             NotificationCenter.default.post(name: MemoFomeVC.memoDidChange, object: nil)
         } else { // 새 메모
             // MemoData 객체를 생성하고, 데이터를 담음
-            DataManager.shared.addNewMemo(subject, tvContents.text, ivPreview.image?.pngData())            
+            DataManager.shared.addNewMemo(subject, tvContents.text, ivPreview.image?.pngData())
             NotificationCenter.default.post(name: MemoFomeVC.newMemoDidInsert, object: nil)
         }
         
