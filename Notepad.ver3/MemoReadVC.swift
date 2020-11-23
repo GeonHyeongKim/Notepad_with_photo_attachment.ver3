@@ -24,8 +24,10 @@ class MemoReadVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tvMemo.rowHeight = UITableView.automaticDimension
+        
         token = NotificationCenter.default.addObserver(forName: MemoFomeVC.memoDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+            
             self?.tvMemo.reloadData()
         })
                 
@@ -91,10 +93,21 @@ extension MemoReadVC: UITableViewDataSource {
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "readImgTableViewCell", for: indexPath)
             cell.imageView?.image = param?.image
-            
             return cell
         default:
             fatalError()
         }
     }
 }
+
+//MARK: - UITableView Delegate
+extension MemoReadVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard indexPath.row > 1 else {
+            return tableView.estimatedRowHeight
+        }
+        
+        return 200
+    }
+}
+
