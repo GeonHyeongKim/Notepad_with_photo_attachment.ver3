@@ -31,12 +31,12 @@ class DataManager {
     }
     
     // 새로운 메모 생성
-    func addNewMemo(_ title: String?, _ content: String?) {
+    func addNewMemo(_ title: String?, _ content: String?, _ img: Data) {
         let newMemo = Memo(context: mainContext)
         newMemo.title = title
         newMemo.content = content
         newMemo.insertDate = Date()
-//        newMemo.insertImages = images.
+        newMemo.insertImg = img
         
         // table reload
         memoList.insert(newMemo, at: 0) // 가장 처음에 입력
