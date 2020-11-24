@@ -91,10 +91,10 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             [weak self] (alert: UIAlertAction!) -> Void in
             self!.checkCameraAuthorizationStatus()
         })
-        //        let linkAction = UIAlertAction(title: "외부 링크 이미지", style: .default, handler: {
-        //            [weak self] (alert: UIAlertAction!) -> Void in
-        //            self.presentAlert(title: "URL 입력", message: "")
-        //        })
+        let linkAction = UIAlertAction(title: "외부 링크 이미지", style: .default, handler: {
+            [weak self] (alert: UIAlertAction!) -> Void in
+            
+        })
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
         alert.addAction(libraryAction)
