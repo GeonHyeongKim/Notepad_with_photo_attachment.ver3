@@ -66,7 +66,7 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             memo.insertDate = Date()
             memo.insertImg = ivPreview.image?.pngData()
             DataManager.shared.saveContext()
-
+            
             NotificationCenter.default.post(name: MemoFomeVC.memoDidChange, object: nil)
         } else { // 새 메모
             // MemoData 객체를 생성하고, 데이터를 담음
@@ -93,18 +93,18 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         })
         let linkAction = UIAlertAction(title: "외부 링크 이미지", style: .default, handler: {
             [weak self] (alert: UIAlertAction!) -> Void in
-            
+            self!.openImageByURL()
         })
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
         alert.addAction(libraryAction)
         alert.addAction(cameraAction)
-        //        alert.addAction(linkAction)
+        alert.addAction(linkAction)
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)
     }
-        
+    
     // photo library 권한 확인
     private func checkPhotoLibraryAuthorizationStatus(){
         PHPhotoLibrary.requestAuthorization { (status) in
@@ -142,6 +142,35 @@ class MemoFomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         @unknown default:
             print("Camera Authorization Status에서 에러발생")
         }
+        
+    }
+    
+    // 외부 이미지 삽입
+    func openImageByURL() {
+        let alert = UIAlertController(title: "URL 입력", message: "", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: { (textField) in
+            textField.placeholder = "URL 입력창"
+            textField.text = "https://cdn.cocoacasts.com/cc00ceb0c6bff0d536f25454d50223875d5c79f1/above-the-clouds.jpg"
+        })
+        let okAction = UIAlertAction(title: "확인", style: .default){ (action) in
+            DispatchQueue.global().async {
+                DispatchQueue.main.async {
+                    guard let url = URL(string: (alert.textFields?.first!.text) ?? "") else {
+                        self.alert(title: "URL 찾지 못함", message: "")
+                        return
+                    }
+                    // Fetch Image Data
+                    if let data = try? Data(contentsOf: url) {
+                        self.ivPreview.image = UIImage(data: data)
+                    }
+                }
+            }
+        }
+        let cancleAction = UIAlertAction(title: "취소", style: .destructive, handler: nil)
+        alert.addAction(cancleAction)
+        alert.addAction(okAction)
+        self.present(alert, animated:true, completion:nil)
+        
     }
     
     // 엘범 열기 & 새로운 촬영
