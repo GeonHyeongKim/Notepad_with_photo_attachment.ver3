@@ -25,6 +25,8 @@
 		57DC46132554D5A700BAF8C6 /* MemoReadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DC46122554D5A700BAF8C6 /* MemoReadVC.swift */; };
 		57DC46182554D60100BAF8C6 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DC46172554D60100BAF8C6 /* MemoCell.swift */; };
 		57DC461C2554D70300BAF8C6 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DC461B2554D70300BAF8C6 /* MemoData.swift */; };
+		57E8708B2570D3360029460B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8708A2570D3360029460B /* TabBarViewController.swift */; };
+		57E8708F2570D49A0029460B /* NewAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8708E2570D49A0029460B /* NewAppDelegate.swift */; };
 		57E9A1FE255CD909006FD97B /* Notepad_ver3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57E9A1FC255CD909006FD97B /* Notepad_ver3.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		57DC46122554D5A700BAF8C6 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
 		57DC46172554D60100BAF8C6 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		57DC461B2554D70300BAF8C6 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
+		57E8708A2570D3360029460B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		57E8708E2570D49A0029460B /* NewAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAppDelegate.swift; sourceTree = "<group>"; };
 		57E9A1FD255CD909006FD97B /* Notepad_ver3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notepad_ver3.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				577794482553930A004AA02A /* AppDelegate.swift */,
+				57E8708E2570D49A0029460B /* NewAppDelegate.swift */,
 				5777944A2553930A004AA02A /* SceneDelegate.swift */,
 				57DC461B2554D70300BAF8C6 /* MemoData.swift */,
 				576FCBC9255B878700AD17DC /* Core Data Model */,
@@ -121,6 +126,7 @@
 				575AEC8E2558149900D97F33 /* Extension */,
 				57DC46092554D4DF00BAF8C6 /* MemoListVC.swift */,
 				57DC460C2554D53100BAF8C6 /* MemoFomeVC.swift */,
+				57E8708A2570D3360029460B /* TabBarViewController.swift */,
 				57DC46122554D5A700BAF8C6 /* MemoReadVC.swift */,
 				5777944E2553930A004AA02A /* Main.storyboard */,
 				577794562553930B004AA02A /* LaunchScreen.storyboard */,
@@ -220,12 +226,14 @@
 			files = (
 				575AEC90255814C200D97F33 /* UIViewController+Alert.swift in Sources */,
 				575AEC94255814D000D97F33 /* UIImage.swift in Sources */,
+				57E8708F2570D49A0029460B /* NewAppDelegate.swift in Sources */,
 				57DC46182554D60100BAF8C6 /* MemoCell.swift in Sources */,
 				576FCBBF255A814B00AD17DC /* DataManager.swift in Sources */,
 				57DC461C2554D70300BAF8C6 /* MemoData.swift in Sources */,
 				577794492553930A004AA02A /* AppDelegate.swift in Sources */,
 				57B596BC256B7473009963DD /* UIimageView.swift in Sources */,
 				5777944B2553930A004AA02A /* SceneDelegate.swift in Sources */,
+				57E8708B2570D3360029460B /* TabBarViewController.swift in Sources */,
 				57DC46132554D5A700BAF8C6 /* MemoReadVC.swift in Sources */,
 				57DC460A2554D4DF00BAF8C6 /* MemoListVC.swift in Sources */,
 				57E9A1FE255CD909006FD97B /* Notepad_ver3.xcdatamodeld in Sources */,
