@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CAC80C4C-A877-4DDA-9475-22FDDFEF55B5"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C15E03E5-78F3-4D0A-864E-D0EA728F45FE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Notepad.ver3/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "C15E03E5-78F3-4D0A-864E-D0EA728F45FE - 8f4d06fac81fd780"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Notepad_ver3.AppDelegate.__deallocating_deinit"
+                  moduleName = "Notepad.ver3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gunhyeong/Desktop/Project/Notepad.ver3/Notepad.ver3/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "C15E03E5-78F3-4D0A-864E-D0EA728F45FE - 22fbb93afd3835f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Notepad_ver3.AppDelegate.__allocating_init() -&gt; Notepad_ver3.AppDelegate"
+                  moduleName = "Notepad.ver3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gunhyeong/Desktop/Project/Notepad.ver3/Notepad.ver3/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "C15E03E5-78F3-4D0A-864E-D0EA728F45FE - f7553a1747bdc106"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Notepad_ver3.AppDelegate.init() -&gt; Notepad_ver3.AppDelegate"
+                  moduleName = "Notepad.ver3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gunhyeong/Desktop/Project/Notepad.ver3/Notepad.ver3/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

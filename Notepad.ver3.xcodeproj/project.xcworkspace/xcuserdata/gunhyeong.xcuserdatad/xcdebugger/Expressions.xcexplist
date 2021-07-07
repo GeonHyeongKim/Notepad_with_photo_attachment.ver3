@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MemoReadVC.tableView(_:cellForRowAt:):MemoReadVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.textLabel?.text!">
+            </PersistentString>
+            <PersistentString
+               value = "param?.contents">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MemoFomeVC.save(_:):MemoFomeVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MemoFomeVC.textViewDidChange(_:):MemoFomeVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "textView.text">
+            </PersistentString>
+            <PersistentString
+               value = "originalMemoContent">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MemoListVC.tableView(_:cellForRowAt:):MemoListVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "row.insertImg">
+            </PersistentString>
+            <PersistentString
+               value = "cellId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MemoReadVC.tableView(_:estimatedHeightForRowAt:):MemoReadVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
